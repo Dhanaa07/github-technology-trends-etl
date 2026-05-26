@@ -1,0 +1,22 @@
+GOAL: Analyze GitHub repositories to identify language popularity, repository trends, topic adoption, and repository activity patterns.
+
+DATA SOURCE: GitHub REST API
+
+LAYERS:
+    Bronze: Raw GitHub JSON responses
+    Silver: Cleaned repository and topic tables
+    Gold: Aggregated analytics tables
+
+DASHBOARD METRICS:
+    1. Most popular languages
+    2. Repository count by language
+    3. Language growth over time
+    4. Top repositories by stars
+    5. Top repositories by forks
+    6. Repository creation trend
+    7. Stars distribution
+    8. Repository activity
+    9. Repository age vs popularity
+    10. Most popular topics
+    11. Topic growth
+    12. Stars by topic
