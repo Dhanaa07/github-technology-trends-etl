@@ -1,22 +1,80 @@
-GOAL: Analyze GitHub repositories to identify language popularity, repository trends, topic adoption, and repository activity patterns.
+// GitHub Technology Trends ETL Pipeline
 
-DATA SOURCE: GitHub REST API
+This project started as a way for me to learn ETL concepts using real-world data.
+Instead of downloading a dataset from Kaggle, I wanted to work with live data from an API. Since I use GitHub regularly, I thought it would be interesting to see what programming languages, repositories, and technologies are currently getting attention.
+The project collects repository data from the GitHub API, cleans and organizes it, and then explores trends such as language popularity, stars, forks, and repository topics.
 
-LAYERS:
-    Bronze: Raw GitHub JSON responses
-    Silver: Cleaned repository and topic tables
-    Gold: Aggregated analytics tables
+// What I'm Trying to Find
 
-DASHBOARD METRICS:
-    1. Most popular languages
-    2. Repository count by language
-    3. Language growth over time
-    4. Top repositories by stars
-    5. Top repositories by forks
-    6. Repository creation trend
-    7. Stars distribution
-    8. Repository activity
-    9. Repository age vs popularity
-    10. Most popular topics
-    11. Topic growth
-    12. Stars by topic
+Some of the questions I wanted to explore are:
+
+* Which programming languages are most popular right now?
+* Which languages receive the most stars and forks?
+* What kinds of projects are developers building?
+* Which technologies seem to be trending?
+
+// How It Works
+
+1. Extract      -    The pipeline fetches repository data from the GitHub API and stores the raw response as JSON.
+2. Transform    -    The raw JSON data is converted into a structured format using Pandas.
+
+During this step I do:
+
+* Select useful fields
+* Flatten nested JSON objects
+* Remove duplicates
+* Handle missing values
+* Prepare the data for analysis
+
+3. Analyze
+
+Once the data is cleaned, I explore it to find patterns and trends.
+Some examples include:
+
+* Repository count by language
+* Average stars by language
+* Average forks by language
+* Top repositories
+* Trending topics
+
+// Tech Stack
+
+* Python
+* Requests
+* Pandas
+* GitHub REST API
+* Parquet
+
+// Project Structure
+
+data/
+├── raw/
+├── processed/
+
+src/
+├── extract.py
+├── transform.py
+├── analyze.py
+
+reports/
+└── charts/
+
+README.md
+
+
+// Why I Built This
+
+I'm currently learning Data Engineering and wanted a project that goes beyond tutorials.
+This project gave me hands-on experience working with APIs, JSON data, data transformation, and exploratory analysis. It also helped me understand how data moves from a source system into a format that can be used for reporting and insights.
+
+// Next Steps
+
+A few things I'd like to add in future versions:
+
+* Historical trend tracking
+* DuckDB for analytics
+* Automated data collection
+* Interactive dashboards
+* Language growth comparisons over time
+
+This project is part of my journey into Data Engineering and building practical experience with ETL pipelines.
