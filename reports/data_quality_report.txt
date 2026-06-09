@@ -1,0 +1,7 @@
+DATA QUALITY REPORT
+==================================================
+
+Total Records: 100
+Records After Cleaning: 92
+Missing Languages Removed: 8
+Duplicate Records Removed: 0
